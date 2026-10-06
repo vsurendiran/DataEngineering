@@ -1,0 +1,166 @@
+{
+	"name": "Copyempcsv",
+	"properties": {
+		"activities": [
+			{
+				"name": "copy emp csv",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Empno",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Empno",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Ename",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ename",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Job",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Job",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MGR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MGR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HIREDATE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HIREDATE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Sal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Sal",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "comm",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "comm",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Deptno",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Deptno",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-10-05T17:00:14Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

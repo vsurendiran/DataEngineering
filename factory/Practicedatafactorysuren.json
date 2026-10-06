@@ -1,0 +1,15 @@
+{
+	"name": "Practicedatafactorysuren",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8b7a3cf1-4856-4d32-9ad3-4f9cc297fb30",
+		"tenantId": "e679c35e-5309-48ab-911f-5e24e755d5af"
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"name": "AzureDataLakeStorageusingKVLS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://practicestoragesuren.dfs.core.windows.net/",
+			"accountKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVaultLS",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADLSBLOBSecret"
+			}
+		}
+	}
+}
